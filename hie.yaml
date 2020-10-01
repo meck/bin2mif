@@ -1,0 +1,8 @@
+cradle:
+  cabal:
+    - path: "./app/Main.hs"
+      component: "bin2mif:exe:bin2mif"
+    - path: "./lib/Data/Mif.hs"
+      component: "bin2mif:lib:bin2mif"
+    - path: "./test/Tests.hs"
+      component: "bin2mif:bin2mif-test"

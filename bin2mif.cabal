@@ -1,0 +1,44 @@
+cabal-version:       2.4
+
+name:                bin2mif
+version:             0.1.0.0
+-- synopsis:
+-- description:
+-- bug-reports:
+license:             MIT
+license-file:        LICENSE
+author:              meck
+maintainer:          Johan@meck.se
+-- copyright:
+-- category:
+extra-source-files:  CHANGELOG.md
+
+library
+  exposed-modules:     Data.Mif
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base ^>=4.13.0.0
+                     , bytestring
+                     , binary-strict
+
+  hs-source-dirs:      lib
+  default-language:    Haskell2010
+
+executable bin2mif
+  main-is:             Main.hs
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base ^>=4.13.0.0, bin2mif
+                     , bytestring
+                     , optparse-applicative
+
+
+  hs-source-dirs:      app
+  default-language:    Haskell2010
+
+test-suite bin2mif-test
+  default-language:    Haskell2010
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Tests.hs
+  build-depends:       base ^>=4.13.0.0
