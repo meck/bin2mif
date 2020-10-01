@@ -10,7 +10,7 @@ import qualified Data.ByteString.Char8 as BS8
 import Numeric (showHex)
 
 makeMif :: Int -> ByteString -> ByteString
-makeMif width input = B.concat $ [header 3 (length datasec)] <> datasec <> [footer]
+makeMif width input = B.concat $ [header width (length datasec)] <> datasec <> [footer]
   where
     datasec = formatChunk <$> zip [0 ..] (chunkBS width input)
 

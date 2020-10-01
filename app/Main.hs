@@ -63,11 +63,11 @@ main :: IO ()
 main = do
   op <- execParser opts
 
-  input <- case input op of
+  inputData <- case input op of
     FileInput fp -> BS.readFile fp
     StdInput -> BS.getContents
 
-  let result = makeMif (wordWidth op) input
+  let result = makeMif (wordWidth op) inputData
 
   case output op of
     FileOutput fp -> BS.writeFile fp result
